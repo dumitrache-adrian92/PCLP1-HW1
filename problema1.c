@@ -69,7 +69,7 @@ void directInsertion (int M, double *grades, char words1[][51],
     char words2[][51], double newGrade, char *newWord1, char *newWord2)
 {
     while (M>=0 && (grades[M]<newGrade ||
-        (grades[M]==newGrade && strcmp(words1[M], newWord1)<0)))
+        (grades[M]-newGrade<0.001 && strcmp(words1[M], newWord1)<0)))
 	{
 		grades[M+1]=grades[M];
 		strcpy(words1[M+1], words1[M]);
